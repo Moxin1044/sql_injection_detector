@@ -1,0 +1,124 @@
+text,label
+' OR 1=1--,1
+' OR 1=1 --,1
+'OR 1=1#,1
+' OR '1'='1,1
+""" OR """"=""""",1
+admin'--,1
+admin' #,1
+admin'/*,1
+or 1=1;--,1
+1 or 1=1,1
+-1 OR 1=1,1
+' or 1=1 limit 1 --,1
+') or ('1'='1,1
+"' UNION SELECT username, password FROM users--",1
+"1 UNION SELECT 1,2,3--",1
+"' union select null, null, null--",1
+"union all select user, pass from admins",1
+1 UNION ALL SELECT table_name FROM information_schema.tables--,1
+' UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'--,1
+"-1 UNION SELECT 1,@@version,3--",1
+"UnIoN sElEcT 1,2,3--",1
+oR 1=1,1
+AdMiN'--,1
+SELECT/**/1,1
+'/**/OR/**/1=1--,1
+1/**/AND/**/1=1,1
+%27%20OR%201=1--,1
+%27%09OR%09%271%27=%271,1
+'%20or%201=1%20--,1
+0x61646D696E,1
+admin' AND 1=1-- 0x27,1
+"char(39,111,114,39)",1
+"' OR username=char(97,100,109,105,110)--",1
+admin'-- -,1
+' OR '1'='1'/*,1
+1' and 1=1 /* inline */ --,1
+1' AND '1'='1,1
+1' AND '1'='2,1
+1 AND 1=1,1
+1' AND 1=1--,1
+1' AND 1=2--,1
+"user' AND SUBSTRING(@@version,1,1)='5",1
+"1' AND ASCII(SUBSTRING((SELECT user()),1,1))>100--",1
+' AND 'a'='a,1
+1' AND SLEEP(5)--,1
+' OR SLEEP(5)#,1
+1 AND SLEEP(5),1
+'; WAITFOR DELAY '0:0:5'--,1
+1'; WAITFOR DELAY '0:0:10'--,1
+"IF(1=1,SLEEP(5),0)",1
+' AND (SELECT 1 FROM (SELECT SLEEP(5))a)--,1
+1' AND pg_sleep(5)--,1
+'; SELECT pg_sleep(5);--,1
+"' AND extractvalue(1,concat(0x7e,(select database())))--",1
+"' AND updatexml(1,concat(0x7e,version()),1)--",1
+"1' AND GTID_SUBSET(CONCAT(0x7e,database()),0x7e)--",1
+' AND (SELECT * FROM (SELECT RAND()*500000) x)--,1
+"1 AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--",1
+'; DROP TABLE users;--,1
+'; DELETE FROM accounts;--,1
+"'; INSERT INTO users(id,user) VALUES(1,'hacker');--",1
+'; EXEC xp_cmdshell('whoami');--,1
+1'; SHOW TABLES;--,1
+1 ORDER BY 10--,1
+-1 ORDER BY 100--,1
+1 GROUP BY 5 HAVING 1=1--,1
+' AND 1=1 UNION SELECT user FROM mysql.user--,1
+1'||(SELECT version())||',1
+' + (SELECT 'x') + ',1
+"admin' AND 1=0 UNION SELECT 'admin','5f4dcc3b5aa765d61d8327deb882cf99'--",1
+%31%27%20OR%20%27%31%27%3D%27%31,1
+1' or '1'='1' or '1'='2,1
+select version(),1
+';SELECT sleep(5);--,1
+"1 and extractvalue(rand(),concat(0x3a,database()))",1
+"SELECT id, name FROM users WHERE id = 1",0
+select * from products where price < 100 order by name,0
+"SELECT username, email FROM accounts WHERE active = 1",0
+"INSERT INTO logs (level, message) VALUES ('INFO', 'started')",0
+UPDATE inventory SET quantity = quantity - 1 WHERE sku = 'ABC123',0
+DELETE FROM sessions WHERE expires_at < NOW(),0
+SELECT COUNT(*) FROM orders WHERE customer_id = 42,0
+"SELECT p.name, c.title FROM posts p JOIN categories c ON p.cat_id = c.id",0
+SELECT * FROM employees WHERE department = 'engineering' LIMIT 10,0
+SHOW TABLES,0
+DESCRIBE users,0
+"SELECT a.name, b.score FROM teams a LEFT JOIN scores b ON a.id = b.team_id WHERE b.season = 2024",0
+SELECT * FROM users WHERE id = ?,0
+SELECT * FROM users WHERE id = %s,0
+"INSERT INTO accounts (user_id, role) VALUES (%s, %s)",0
+SELECT username FROM accounts WHERE email = $1 AND active = true,0
+UPDATE t SET col = :value WHERE key = :pk,0
+SELECT * FROM table WHERE name LIKE ? ORDER BY ? DESC,0
+SELECT * FROM foo WHERE x BETWEEN ? AND ?,0
+q=python tutorial,0
+search?keyword=wireless+mouse,0
+?page=2&sort=asc,0
+/products?id=123,0
+https://example.com/api/users?limit=50&offset=0,0
+user: admin logged in at 09:15,0
+order number 100245 shipped,0
+apple banana cherry,0
+Hello world,0
+This is a normal test sentence.,0
+key=value,0
+filter[category]=books&filter[price]=10,0
+name=John&city=New York,0
+client_id=abc123&grant_type=authorization_code,0
+password must contain at least 8 characters,0
+referer=https://example.com/page?from=home,0
+amount=99.99 currency=USD,0
+status=pending,0
+The quick brown fox jumps over the lazy dog,0
+temperature=23.5,0
+order by 2 limit 1,0
+select name from people where age between 18 and 60 group by name,0
+page 1 of 100 results,0
+we use select * in read-only replicas only,0
+note: the keyword 'admin' triggers no action,0
+or you may choose another option,0
+and then we continue,0
+SELECT 1,0
+1+1=2 and 2+2=4,0
